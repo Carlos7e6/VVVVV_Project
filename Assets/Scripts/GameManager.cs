@@ -24,16 +24,15 @@ public class GameManager : MonoBehaviour
     {
         if(Instance != null && Instance != this)
         {
-            Destroy(this);
+           // Destroy(GameObject.Find("GameManager"));
+            Destroy(this.gameObject);
         }
         else
         {
            Instance = this; 
            DontDestroyOnLoad(this);
+           menu = GameObject.Find("Menu");
         }
-
-        menu = GameObject.Find("Menu");
-
     }
 
     private void Start()
@@ -81,7 +80,11 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Destroy(this);
+        GameObject.Find("Health").GetComponent<Image>().sprite = spritesHeart[2];
+        health = 2;
+        Time.timeScale = 1f;
+        menu.SetActive(false);
         SceneManager.LoadScene(0);
+  
     }
 }
