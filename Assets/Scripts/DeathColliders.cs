@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class DeathColliders : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        Debug.Log("muerte");
+        GameManager.Instance.EndGame();
     }
 }

@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
 
     private AnimationBehaviour anim;
     private bool isFlippedX;
+    [SerializeField] private bool isFlippedY;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate() 
     {
         transform.position = Vector2.MoveTowards(transform.position, positions[index], speed * Time.deltaTime);
-        anim.FlipCharacter(isFlippedX, false);
+        anim.FlipCharacter(isFlippedX, isFlippedY);
     }
 
     private void Update()

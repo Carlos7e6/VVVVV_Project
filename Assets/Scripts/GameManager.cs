@@ -53,16 +53,10 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        if(health == 0)
-        {
-            Time.timeScale = 0f;
-            menu.SetActive(true);
+        health = 0;
+        Time.timeScale = 0f;
+        menu.SetActive(true);
 
-        }
-        else
-        {
-            //Debug.Log("WIN WITH " + points + " points");
-        }
     }
 
     private void ChangeHeart(int health)

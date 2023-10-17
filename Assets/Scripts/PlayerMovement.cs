@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         isFlipedX = false;
         isFlipedY = false;
         isRunning =  false;
-        isFlying = false;
+        isFlying = true;
         anim = GetComponent<AnimationBehaviour>();
     }
 
@@ -74,6 +74,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isFlying = false;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isFlying = true;
     }
 
     public int TakeDmg()
