@@ -16,40 +16,47 @@ public class Enemy : MonoBehaviour
     private AnimationBehaviour anim;
     private bool isFlippedX;
     [SerializeField] private bool isFlippedY;
+    [SerializeField] private bool isMoving;
 
     private void Start()
     {
         index = 0;
         anim = GetComponent<AnimationBehaviour>();
+        anim.FlipCharacter(isFlippedX, isFlippedY);
     }
 
     private void FixedUpdate() 
     {
-        transform.position = Vector2.MoveTowards(transform.position, positions[index], speed * Time.deltaTime);
-        anim.FlipCharacter(isFlippedX, isFlippedY);
+        if(isMoving == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, positions[index], speed * Time.deltaTime);
+            anim.FlipCharacter(isFlippedX, isFlippedY);
+        }
     }
 
     private void Update()
     {
-
-        if(transform.position == positions[index])
+        if (isMoving == true)
         {
-            if (index == positions.Length - 1)
+            if (transform.position == positions[index])
             {
-                index = 0;
+                if (index == positions.Length - 1)
+                {
+                    index = 0;
+                }
+                else
+                {
+                    index++;
+                }
+            }
+            else if (transform.position.x > positions[index].x)
+            {
+                isFlippedX = true;
             }
             else
             {
-                index++;
+                isFlippedX = false;
             }
-        }
-        else if(transform.position.x > positions[index].x)
-        {
-            isFlippedX = true;
-        }
-        else
-        {
-            isFlippedX = false;
         }
     }
 

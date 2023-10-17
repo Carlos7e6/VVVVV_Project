@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2847603808192513751}
+  - component: {fileID: 8699216583489338323}
   - component: {fileID: 428925153516701998}
   - component: {fileID: 1177053377278520556}
   - component: {fileID: 7601505942245446617}
-  - component: {fileID: 8699216583489338323}
   - component: {fileID: 8140318536767175853}
   m_Layer: 7
   m_Name: Enemy_Fly
@@ -36,6 +36,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8699216583489338323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011433739446997956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b872ea35d937b5499466439fa10e5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1
+  speed: 7
+  positions: []
+  isFlippedY: 0
+  isMoving: 0
 --- !u!212 &428925153516701998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -170,21 +187,6 @@ PolygonCollider2D:
       - {x: 0.34, y: -0.06}
       - {x: 0.5, y: 0.099999994}
   m_UseDelaunayMesh: 0
---- !u!114 &8699216583489338323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7011433739446997956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b872ea35d937b5499466439fa10e5f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 1
-  speed: 7
-  positions: []
 --- !u!114 &8140318536767175853
 MonoBehaviour:
   m_ObjectHideFlags: 0

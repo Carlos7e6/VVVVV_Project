@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         health = 2;
         Time.timeScale = 1f;
         menu.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
   
     }
 }
