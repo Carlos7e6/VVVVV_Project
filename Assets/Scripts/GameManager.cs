@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private int points;
+    public bool isBack;
 
     public Sprite[] spritesHeart;
 
@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     {
         if(Instance != null && Instance != this)
         {
-           // Destroy(GameObject.Find("GameManager"));
             Destroy(this.gameObject);
         }
         else
@@ -37,12 +36,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        points = 0;
+        isBack = false;
         Time.timeScale = 1f;
         menu.SetActive(false);
        
     }
-
+ 
     public int SetDmg(int dmg)
     {
 

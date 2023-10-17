@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bce1225f32bfc40947019522e4bd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBack: 0
+  backPortalColor: {r: 0.09433961, g: 0.010145952, b: 0.085848466, a: 0}
 --- !u!58 &4068290302097920676
 CircleCollider2D:
   m_ObjectHideFlags: 0

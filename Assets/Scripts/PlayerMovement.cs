@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public float _speed;
     public int health;
 
+    [SerializeField] private Vector2 positionBackToSpawn;
+
 
     void Start()
     {
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         isRunning =  false;
         isFlying = true;
         anim = GetComponent<AnimationBehaviour>();
+
+        if(GameManager.Instance.isBack) transform.position = positionBackToSpawn;
     }
 
     private void FixedUpdate()

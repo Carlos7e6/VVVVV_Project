@@ -52,7 +52,7 @@ MonoBehaviour:
   speed: 7
   positions: []
   isFlippedY: 0
-  isMoving: 0
+  isRunning: 0
 --- !u!212 &428925153516701998
 SpriteRenderer:
   m_ObjectHideFlags: 0

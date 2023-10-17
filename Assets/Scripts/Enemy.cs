@@ -15,28 +15,32 @@ public class Enemy : MonoBehaviour
 
     private AnimationBehaviour anim;
     private bool isFlippedX;
+
+
     [SerializeField] private bool isFlippedY;
-    [SerializeField] private bool isMoving;
+    [SerializeField] private bool isRunning;
 
     private void Start()
     {
         index = 0;
         anim = GetComponent<AnimationBehaviour>();
         anim.FlipCharacter(isFlippedX, isFlippedY);
+        GetComponent<Animator>().SetBool("isRunning",isRunning);    
     }
 
     private void FixedUpdate() 
     {
-        if(isMoving == true)
+        if(isRunning == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, positions[index], speed * Time.deltaTime);
             anim.FlipCharacter(isFlippedX, isFlippedY);
+
         }
     }
 
     private void Update()
     {
-        if (isMoving == true)
+        if (isRunning == true)
         {
             if (transform.position == positions[index])
             {
