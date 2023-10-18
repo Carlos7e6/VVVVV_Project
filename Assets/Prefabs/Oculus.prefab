@@ -182,5 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cffc9641b661d940afbd41044d4345b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1103317339279445020, guid: 4172aae150ebe144884f642565cfddd6, type: 3}
+  bulletPrefab: {fileID: 6401868417182882318, guid: 1266ee8089b1def4b92a0b112325fe9c, type: 3}
   flipBasedOnDirection: 0
