@@ -4,6 +4,7 @@ public class LookAtPlayer : MonoBehaviour
 {
     public Transform player;  // Referencia al jugador
     public GameObject bulletPrefab;
+    private GameObject bulletInstance;
 
     public bool flipBasedOnDirection = true;  // Si quieres que el objeto gire basado en la dirección
 
@@ -28,19 +29,19 @@ public class LookAtPlayer : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
-
-    private void Start()
-    {
-        SpawnBullet();
-    }
-    void SpawnBullet()
+    public void SpawnBullet()
     {
         // Crea una instancia de la bala
-        GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
         // Asigna la dirección de movimiento a la bala
         Bullet bulletScript = bulletInstance.GetComponent<Bullet>();
         bulletScript.SetShooter(this.gameObject);
         bulletScript.SetTargetTransform(player);
+    }
+
+    public void StopSpawnBullet()
+    {
+        Destroy(bulletInstance);
     }
 }

@@ -145,7 +145,7 @@ VFXRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 40
+  m_SortingOrder: 13
 --- !u!58 &4907117242005808196
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -193,7 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca95293c6ed54ce4ba30db248e93c833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
+  dmg: 1
 --- !u!50 &5784035129198594646
 Rigidbody2D:
   serializedVersion: 4
