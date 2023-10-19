@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
 
 
     [SerializeField] private bool isFlippedY;
-    [SerializeField] private bool isRunning;
+    [SerializeField] public bool isRunning;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -34,8 +35,12 @@ public class Enemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, positions[index], speed * Time.deltaTime);
             anim.FlipCharacter(isFlippedX, isFlippedY);
-
         }
+    }
+
+    public void SetDead()
+    {
+        isDead = true;
     }
 
     private void Update()
@@ -68,10 +73,22 @@ public class Enemy : MonoBehaviour
     {
         if (collider.gameObject.layer == 3)
         {
-            if(GameManager.Instance.SetDmg(dmg) == 0)
+            if(isDead != true)
             {
-                GameManager.Instance.EndGame();
+                if (GameManager.Instance.SetDmg(dmg) <= 0)
+                {
+                    GameManager.Instance.EndGame();
+                }
             }
+        }
+        else if(collider.gameObject.layer == 6 && isDead == true)
+        {
+            Debug.Log("iM FALLIIING");
+            try
+            {
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            }
+            catch { }
         }
         
     }

@@ -742,6 +742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 7011433739446997956, guid: 177f4fab29bd7a94cae396c42c26ee89, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8699216583489338323, guid: 177f4fab29bd7a94cae396c42c26ee89, type: 3}
       propertyPath: isMoving
       value: 1
@@ -4116,7 +4120,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2847603808192513751, guid: 6540b6e7c5219e943b287f7fae9dd43f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.082949
+      value: -3.99
       objectReference: {fileID: 0}
     - target: {fileID: 2847603808192513751, guid: 6540b6e7c5219e943b287f7fae9dd43f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4157,6 +4161,10 @@ PrefabInstance:
     - target: {fileID: 7011433739446997956, guid: 6540b6e7c5219e943b287f7fae9dd43f, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106829693332079001, guid: 6540b6e7c5219e943b287f7fae9dd43f, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8699216583489338323, guid: 6540b6e7c5219e943b287f7fae9dd43f, type: 3}
       propertyPath: speed

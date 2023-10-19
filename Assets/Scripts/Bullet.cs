@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
     public int dmg = 1;
+    public GameObject ExplosionFinal;
 
     private Vector2 moveDirection;
     private GameObject shooter;
@@ -48,6 +49,21 @@ public class Bullet : MonoBehaviour
                 GameManager.Instance.EndGame();
             }
         }
+        else if(collider.gameObject.layer == 7)
+        {
+            collider.gameObject.GetComponent<Enemy>().isRunning = false;
+            collider.gameObject.GetComponent<Animator>().SetBool("isRunning", false);
+            collider.gameObject.GetComponent<Animator>().SetBool("isDead", true);
+            collider.gameObject.GetComponent<Enemy>().SetDead();
+
+            try
+            {
+                collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 2;
+            }
+            catch { }
+        }
+
+        Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
         ResetBullet();
     }
 }

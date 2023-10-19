@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   dmg: 1
+  ExplosionFinal: {fileID: 190770137063657775, guid: da5707494a7cc5c4db9daa2ba22ff077, type: 3}
 --- !u!50 &5784035129198594646
 Rigidbody2D:
   serializedVersion: 4

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 63bb78e80f3b3db4a8d61a75ceb44fef
+guid: 43ff7beeed6070a4c93a78535cb90d80
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Death_0
+      name: ExplosionPostBullet_0000_Capa-0-copia_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 103.25
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0628c08e6cf725f418fda7d15c1952ae
+      internalID: 1594459622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionPostBullet_0000_Capa-0-copia_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 99
+        width: 103.25
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac62b29ec32fed40a006b9d216f15eb
+      internalID: -1578839563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionPostBullet_0000_Capa-0-copia_2
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 99
+        width: 103.25
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c160fed7057727e4f8dfd0c351613a7c
+      internalID: 665712434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionPostBullet_0000_Capa-0-copia_3
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 99
+        width: 103.25
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae556f0dd829ae45bf7559639981504
+      internalID: 1152343720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExplosionPostBullet_0000_Capa-0-copia_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
-        height: 150
+        width: 103.25
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80fec538c04f89847a87097f503c329b
-      internalID: -421581678
+      spriteID: d4941a09c71cd6245b3635f3401eadeb
+      internalID: -336389936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_1
+      name: ExplosionPostBullet_0000_Capa-0-copia_5
       rect:
         serializedVersion: 2
-        x: 150
+        x: 103
         y: 0
-        width: 150
-        height: 150
+        width: 103.25
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0373a0c04e6e4a41b7b8741d1eb2528
-      internalID: -1752935694
+      spriteID: cdb476a324cd03547963fa51d01c1861
+      internalID: -1635081088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_2
+      name: ExplosionPostBullet_0000_Capa-0-copia_6
       rect:
         serializedVersion: 2
-        x: 300
+        x: 206
         y: 0
-        width: 150
-        height: 150
+        width: 103.25
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17771f9b350f26942845f6d653fec627
-      internalID: 1227593777
+      spriteID: cce45aedd9a0da24e9057f2f4bfa3ab7
+      internalID: 1628262787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Death_3
+      name: ExplosionPostBullet_0000_Capa-0-copia_7
       rect:
         serializedVersion: 2
-        x: 450
+        x: 309
         y: 0
-        width: 150
-        height: 150
+        width: 103.25
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 002f03cc0ce069a4f8e2897ed61c3257
-      internalID: 1089130734
+      spriteID: c74198004f9cb544192d71ad3e6e9d87
+      internalID: 535846230
       vertices: []
       indices: 
       edges: []
@@ -204,10 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Death_0: -421581678
-      Death_1: -1752935694
-      Death_2: 1227593777
-      Death_3: 1089130734
+      ExplosionPostBullet_0000_Capa-0-copia_0: 1594459622
+      ExplosionPostBullet_0000_Capa-0-copia_1: -1578839563
+      ExplosionPostBullet_0000_Capa-0-copia_2: 665712434
+      ExplosionPostBullet_0000_Capa-0-copia_3: 1152343720
+      ExplosionPostBullet_0000_Capa-0-copia_4: -336389936
+      ExplosionPostBullet_0000_Capa-0-copia_5: -1635081088
+      ExplosionPostBullet_0000_Capa-0-copia_6: 1628262787
+      ExplosionPostBullet_0000_Capa-0-copia_7: 535846230
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

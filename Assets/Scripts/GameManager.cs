@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
 
     private void ChangeHeart(int health)
     {
+        if(health < 0) health = 0;
         Image[] spritesRender = gameObject.GetComponentsInChildren<Image>();
         for(int i = 0; i < spritesRender.Length; i++)
         {
-            Debug.Log(spritesRender[i].name);
             if (spritesRender[i].name == "Health")
             {
                 spritesRender[i].sprite = spritesHeart[health];
