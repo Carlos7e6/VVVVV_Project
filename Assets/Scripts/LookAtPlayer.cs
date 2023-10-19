@@ -6,8 +6,6 @@ public class LookAtPlayer : MonoBehaviour
     public GameObject bulletPrefab;
     private GameObject bulletInstance;
 
-    public bool flipBasedOnDirection = true;  // Si quieres que el objeto gire basado en la dirección
-
     void Update()
     {
         // Diferencia de posición entre el objeto y el jugador
@@ -19,15 +17,6 @@ public class LookAtPlayer : MonoBehaviour
         // Aplica la rotación al objeto
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-        // Si quieres que el objeto gire cuando se desplace hacia la izquierda o derecha
-        if (flipBasedOnDirection && direction.x < 0f)
-        {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else if (flipBasedOnDirection && direction.x > 0f)
-        {
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
     }
     public void SpawnBullet()
     {

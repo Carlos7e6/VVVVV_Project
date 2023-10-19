@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
     {
         // Reiniciamos la posición al shooter
         transform.position = shooter.transform.position;
-        Vector2 fireDirection = (targetTranform.position - shooter.transform.position).normalized;
+        Vector2 fireDirection = (targetTranform.position - shooter.transform.position);
         moveDirection = fireDirection.normalized;
     }
 
@@ -48,22 +48,32 @@ public class Bullet : MonoBehaviour
             {
                 GameManager.Instance.EndGame();
             }
+            Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
+            ResetBullet();
+
         }
         else if(collider.gameObject.layer == 7)
         {
-            collider.gameObject.GetComponent<Enemy>().isRunning = false;
-            collider.gameObject.GetComponent<Animator>().SetBool("isRunning", false);
-            collider.gameObject.GetComponent<Animator>().SetBool("isDead", true);
-            collider.gameObject.GetComponent<Enemy>().SetDead();
-
-            try
+            if(collider.gameObject.GetComponent<Enemy>().GetDead() == false)
             {
-                collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 2;
-            }
-            catch { }
-        }
+                collider.gameObject.GetComponent<Enemy>().isRunning = false;
+                collider.gameObject.GetComponent<Animator>().SetBool("isRunning", false);
+                collider.gameObject.GetComponent<Animator>().SetBool("isDead", true);
+                collider.gameObject.GetComponent<Enemy>().SetDead();
 
-        Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
-        ResetBullet();
+                try
+                {
+                    collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 2;
+                }
+                catch { }
+                Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
+                ResetBullet();
+            }
+        }
+        else
+        {
+            Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
+            ResetBullet();
+        }
     }
 }

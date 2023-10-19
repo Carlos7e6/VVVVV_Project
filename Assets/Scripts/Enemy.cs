@@ -43,6 +43,11 @@ public class Enemy : MonoBehaviour
         isDead = true;
     }
 
+    public bool GetDead()
+    {
+        return isDead;
+    }
+
     private void Update()
     {
         if (isRunning == true)
@@ -83,7 +88,6 @@ public class Enemy : MonoBehaviour
         }
         else if(collider.gameObject.layer == 6 && isDead == true)
         {
-            Debug.Log("iM FALLIIING");
             try
             {
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
