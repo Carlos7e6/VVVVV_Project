@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour
         }
         else if(collider.gameObject.layer == 6 && isDead == true)
         {
+            Destroy(GetComponent<PolygonCollider2D>());
             try
             {
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8778293593215927202}
   - component: {fileID: 6843623247172830664}
   - component: {fileID: 2494332318695655366}
+  - component: {fileID: 2830632706640873027}
   m_Layer: 0
   m_Name: Oculus
   m_TagString: Untagged
@@ -131,6 +132,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1666666}
   m_EdgeRadius: 0
+--- !u!114 &2830632706640873027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279264073795541379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b62452253d70c4bba46e77da84b6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9220700886280907477
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,4 +243,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1103317339279445020, guid: 4172aae150ebe144884f642565cfddd6, type: 3}
   bulletPrefab: {fileID: 6401868417182882318, guid: 1266ee8089b1def4b92a0b112325fe9c, type: 3}
-  flipBasedOnDirection: 0

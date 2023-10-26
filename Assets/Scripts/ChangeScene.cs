@@ -16,7 +16,10 @@ public class ChangeScene : MonoBehaviour
             GameManager.Instance.isBack = isBack;
             if (isBack == false)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                if (SceneManager.GetActiveScene().buildIndex != 5)
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                else
+                    GameManager.Instance.EndGame();
             }
             else
             {
@@ -24,13 +27,10 @@ public class ChangeScene : MonoBehaviour
             }
         }
     }
-
     private void Start()
     {
          if(isBack == true)
         {
-            //Debug.Log(isBack);
-            Debug.Log(GetComponent<SpriteRenderer>().material);
             GetComponent<SpriteRenderer>().material.SetColor("_Color" ,backPortalColor);
         }
     }

@@ -77,16 +77,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isFlying = false;
+        if(collision.gameObject.layer == 6)
+        {
+            isFlying = false;
+        }
+    
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        isFlying = true;
-    }
-
-    public int TakeDmg()
-    {
-        return health--;
+        if (collision.gameObject.layer == 6)
+        {
+            isFlying = true;
+        }
     }
 }

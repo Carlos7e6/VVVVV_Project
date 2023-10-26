@@ -20,10 +20,11 @@ public class AnimationBehaviour : MonoBehaviour
 
     public void Move(float currentSpeed, float speedUp, bool isRunning)
     {
-
-        _rb.velocity = new Vector2(1 * currentSpeed, speedUp);
-        _animator.SetBool("isRunning", isRunning);
-
+        if(GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Static)
+        {
+            _rb.velocity = new Vector2(1 * currentSpeed, speedUp);
+            _animator.SetBool("isRunning", isRunning);
+        }
     }
 
     public void FlipCharacter(bool isFlipedX, bool isFlipedY)

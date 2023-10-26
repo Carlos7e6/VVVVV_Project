@@ -3,6 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 10f;
+    private float CurrentSpeed;
     public int dmg = 1;
     public GameObject ExplosionFinal;
 
@@ -10,9 +11,12 @@ public class Bullet : MonoBehaviour
     private GameObject shooter;
     private Transform targetTranform;
 
+    public bool bulletOutRange;
+
     private void Start()
     {
         ResetBullet();
+        CurrentSpeed = speed;
     }
 
     //Seteamos en el padre cual es el shooter
@@ -29,7 +33,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(moveDirection * speed * Time.deltaTime);
+       transform.Translate(moveDirection * CurrentSpeed * Time.deltaTime);
     }
 
     private void ResetBullet()
@@ -48,8 +52,6 @@ public class Bullet : MonoBehaviour
             {
                 GameManager.Instance.EndGame();
             }
-            Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
-            ResetBullet();
 
         }
         else if(collider.gameObject.layer == 7)
@@ -66,14 +68,19 @@ public class Bullet : MonoBehaviour
                     collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 2;
                 }
                 catch { }
-                Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
-                ResetBullet();
             }
         }
-        else
+
+        if(collider.gameObject.layer == 6 || collider.gameObject.layer == 3 || collider.gameObject.layer == 11 || collider.gameObject.layer == 7)
         {
             Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
             ResetBullet();
+            if (bulletOutRange == true) SetCurrentSpeed(0);
+            else if(bulletOutRange == false && CurrentSpeed == 0) SetCurrentSpeed(speed);
         }
+    }
+    public void SetCurrentSpeed(float speed)
+    {
+        CurrentSpeed = speed;        
     }
 }

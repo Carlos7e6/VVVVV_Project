@@ -7,7 +7,7 @@ public class DeathColliders : MonoBehaviour
 {
     private void OnTriggerEnter2D()
     {
-        Debug.Log("muerte");
+        GameManager.Instance.SetDmg(2);
         GameManager.Instance.EndGame();
     }
 }

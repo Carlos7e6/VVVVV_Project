@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private GameObject menu;
+    private GameObject win;
+    private GameObject lose;
 
     private void Awake()
     {
@@ -31,6 +34,8 @@ public class GameManager : MonoBehaviour
            Instance = this; 
            DontDestroyOnLoad(this);
            menu = GameObject.Find("Menu");
+           lose = GameObject.Find("YouLose");
+           win = GameObject.Find("YouWin"); 
         }
     }
 
@@ -39,6 +44,8 @@ public class GameManager : MonoBehaviour
         isBack = false;
         Time.timeScale = 1f;
         menu.SetActive(false);
+        win.SetActive(false);
+        lose.SetActive(false);
        
     }
  
@@ -52,9 +59,16 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        health = 0;
-        Time.timeScale = 0f;
         menu.SetActive(true);
+        Time.timeScale = 0f;
+        if (health == 0)
+        {
+            lose.SetActive(true);
+        }
+        else
+        {
+            win.SetActive(true);
+        }
 
     }
 
@@ -78,6 +92,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         menu.SetActive(false);
         SceneManager.LoadScene(0);
-  
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(6);
     }
 }
