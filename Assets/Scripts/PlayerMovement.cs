@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(isFlying == false)
             {
+                GetComponent<AudioSource>().Play();
                 speedUp *= -1;
                 isFlipedY = !isFlipedY;
                 isFlying = true;

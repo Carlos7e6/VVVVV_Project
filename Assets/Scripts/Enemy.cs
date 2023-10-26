@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
     public void SetDead()
     {
+        GetComponent<AudioSource>().Play();
         isDead = true;
     }
 

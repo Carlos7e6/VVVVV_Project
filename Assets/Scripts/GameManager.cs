@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private GameObject menu;
-    private GameObject win;
-    private GameObject lose;
+    private GameObject fmenu;
+    private GameObject WinOrLoseText;
+    private GameObject WinOrLoseMenu;
 
     private void Awake()
     {
@@ -34,8 +35,9 @@ public class GameManager : MonoBehaviour
            Instance = this; 
            DontDestroyOnLoad(this);
            menu = GameObject.Find("Menu");
-           lose = GameObject.Find("YouLose");
-           win = GameObject.Find("YouWin"); 
+           fmenu = GameObject.Find("FirstMenu");
+            WinOrLoseText = GameObject.Find("WinOrLoseText");
+            WinOrLoseMenu = GameObject.Find("WinOrLoseMenu");
         }
     }
 
@@ -43,10 +45,21 @@ public class GameManager : MonoBehaviour
     {
         isBack = false;
         Time.timeScale = 1f;
-        menu.SetActive(false);
-        win.SetActive(false);
-        lose.SetActive(false);
-       
+
+
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            fmenu.SetActive(false);
+            menu.SetActive(false);
+        }
+        else
+        {
+            fmenu.SetActive(true);
+            menu.SetActive(true);
+        }
+
+        WinOrLoseMenu.SetActive(false);
+
     }
  
     public int SetDmg(int dmg)
@@ -61,13 +74,13 @@ public class GameManager : MonoBehaviour
     {
         menu.SetActive(true);
         Time.timeScale = 0f;
-        if (health == 0)
+        if (health <= 0)
         {
-            lose.SetActive(true);
+            SetWinOrLoseText(false);
         }
         else
         {
-            win.SetActive(true);
+            SetWinOrLoseText(true);
         }
 
     }
@@ -85,17 +98,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    private void SetWinOrLoseText(bool isWin)
+    {
+        if(isWin == true)
+        {
+            WinOrLoseText.GetComponent<Text>().text = "¡Has ganado!";
+        }
+        else
+        {
+            WinOrLoseText.GetComponent<Text>().text = "¡Has perdido!";
+        }
+        WinOrLoseMenu.SetActive(true);
+    }
+
+    public void RestartStats()
     {
         GameObject.Find("Health").GetComponent<Image>().sprite = spritesHeart[2];
         health = 2;
         Time.timeScale = 1f;
-        menu.SetActive(false);
-        SceneManager.LoadScene(0);
     }
 
-    public void GoToMenu()
+    public void SetSceneLoad(int x)
     {
-        SceneManager.LoadScene(6);
+
+        if(x == -1) Application.Quit();
+        else if (x == 0)
+        {
+            WinOrLoseMenu.SetActive(false);
+            fmenu.SetActive(true);
+            SceneManager.LoadScene(x);
+          
+        }
+        else
+        {
+            RestartStats();
+            menu.SetActive(false);
+            fmenu.SetActive(false);
+            SceneManager.LoadScene(x); 
+        }   
     }
+
 }

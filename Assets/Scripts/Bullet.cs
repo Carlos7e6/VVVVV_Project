@@ -73,7 +73,9 @@ public class Bullet : MonoBehaviour
 
         if(collider.gameObject.layer == 6 || collider.gameObject.layer == 3 || collider.gameObject.layer == 11 || collider.gameObject.layer == 7)
         {
+            Debug.Log("bom");
             Instantiate(ExplosionFinal, transform.position, Quaternion.identity);
+            GetComponent<AudioSource>().Play();
             ResetBullet();
             if (bulletOutRange == true) SetCurrentSpeed(0);
             else if(bulletOutRange == false && CurrentSpeed == 0) SetCurrentSpeed(speed);

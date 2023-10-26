@@ -13,17 +13,24 @@ public class ChangeScene : MonoBehaviour
     {
         if (collider.gameObject.layer == 3)
         {
-            GameManager.Instance.isBack = isBack;
-            if (isBack == false)
+            if (SceneManager.GetActiveScene().buildIndex == 5) 
             {
-                if (SceneManager.GetActiveScene().buildIndex != 5)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-                else
-                    GameManager.Instance.EndGame();
+                GameManager.Instance.EndGame();
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+                GameManager.Instance.isBack = isBack;
+                if (isBack == false)
+                {
+                    if (SceneManager.GetActiveScene().buildIndex != 5)
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+                    else
+                        GameManager.Instance.EndGame();
+                }
+                else
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+                }
             }
         }
     }
