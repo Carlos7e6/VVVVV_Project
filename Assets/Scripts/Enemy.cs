@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -20,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool isFlippedY;
     [SerializeField] public bool isRunning;
     private bool isDead = false;
+    public bool Fly;
 
     private void Start()
     {
@@ -41,6 +38,7 @@ public class Enemy : MonoBehaviour
     public void SetDead()
     {
         GetComponent<AudioSource>().Play();
+        if(Fly == false) Destroy(GetComponent<PolygonCollider2D>());
         isDead = true;
     }
 

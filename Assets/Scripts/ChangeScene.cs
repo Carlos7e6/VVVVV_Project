@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +11,7 @@ public class ChangeScene : MonoBehaviour
     {
         if (collider.gameObject.layer == 3)
         {
-            if (SceneManager.GetActiveScene().buildIndex == 5) 
+            if (SceneManager.GetActiveScene().buildIndex == 5 && isBack == false) 
             {
                 GameManager.Instance.EndGame();
             }
@@ -30,6 +28,7 @@ public class ChangeScene : MonoBehaviour
                 else
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1, LoadSceneMode.Single);
+                    isBack = false;
                 }
             }
         }
