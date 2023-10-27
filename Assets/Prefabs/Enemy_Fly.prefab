@@ -55,6 +55,7 @@ MonoBehaviour:
   positions: []
   isFlippedY: 0
   isRunning: 0
+  Fly: 1
 --- !u!212 &428925153516701998
 SpriteRenderer:
   m_ObjectHideFlags: 0

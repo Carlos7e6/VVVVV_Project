@@ -1,10 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -126,11 +119,11 @@ public class GameManager : MonoBehaviour
     {
         if(isWin == true)
         {
-            WinOrLoseText.GetComponent<Text>().text = "¡Has ganado!";
+            WinOrLoseText.GetComponent<Text>().text = "ï¿½Has ganado!";
         }
         else
         {
-            WinOrLoseText.GetComponent<Text>().text = "¡Has perdido!";
+            WinOrLoseText.GetComponent<Text>().text = "ï¿½Has perdido!";
         }
         WinOrLoseMenu.SetActive(true);
     }

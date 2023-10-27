@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool isFlippedY;
     [SerializeField] public bool isRunning;
     private bool isDead = false;
+    public bool Fly;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
         isDead = true;
+        if (Fly != false) Destroy(GetComponent<PolygonCollider2D>());
     }
 
     public bool GetDead()
