@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     private GameObject WinOrLoseText;
     private GameObject WinOrLoseMenu;
 
+    private bool SetPause = false;
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -61,7 +63,27 @@ public class GameManager : MonoBehaviour
         WinOrLoseMenu.SetActive(false);
 
     }
- 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && health >0)
+        {
+            if (WinOrLoseMenu.active == false)
+            {
+                menu.SetActive(true);
+                WinOrLoseMenu.SetActive(true);
+                WinOrLoseText.GetComponent<Text>().text = "PAUSE";
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                menu.SetActive(false);
+                WinOrLoseMenu.SetActive(false);
+                Time.timeScale = 1f;
+            }
+        }
+    }
+
     public int SetDmg(int dmg)
     {
 
@@ -76,10 +98,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         if (health <= 0)
         {
+            Debug.Log("Derrota");
             SetWinOrLoseText(false);
         }
         else
         {
+            Debug.Log("Victoria");
             SetWinOrLoseText(true);
         }
 
@@ -116,6 +140,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Health").GetComponent<Image>().sprite = spritesHeart[2];
         health = 2;
         Time.timeScale = 1f;
+        Debug.Log("RestartStats");
     }
 
     public void SetSceneLoad(int x)
@@ -124,6 +149,7 @@ public class GameManager : MonoBehaviour
         if(x == -1) Application.Quit();
         else if (x == 0)
         {
+            Debug.Log("Charging menu");
             WinOrLoseMenu.SetActive(false);
             fmenu.SetActive(true);
             SceneManager.LoadScene(x);

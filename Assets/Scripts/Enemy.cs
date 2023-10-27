@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour
             Destroy(GetComponent<PolygonCollider2D>());
             try
             {
+                Debug.Log("Enemigo cayendo");
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
             catch { }
