@@ -2,6 +2,7 @@ Buenas, buenas.
 
 
 Pues este juego tiene 5 escenas las cuales se va de la primara a la ultima por portales.
+Esta ambientado en una cueva donde un mago debe de escapar de ella. Se ha querido dar la paleta de colores entorno lila/azul
 Debes evitar que los enemigos te golpeen y llegar hasta el ultimo portal que te dará la victorio
 Con A-D te mueves hacia los lados y con Space cambias la gravedad.
 
