@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
         GetComponent<AudioSource>().Play();
         if(Fly == false) Destroy(GetComponent<PolygonCollider2D>());
         isDead = true;
+        if (Fly != false) Destroy(GetComponent<PolygonCollider2D>());
     }
 
     public bool GetDead()

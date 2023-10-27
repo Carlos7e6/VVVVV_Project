@@ -119,11 +119,11 @@ public class GameManager : MonoBehaviour
     {
         if(isWin == true)
         {
-            WinOrLoseText.GetComponent<Text>().text = "¡Has ganado!";
+            WinOrLoseText.GetComponent<Text>().text = "ï¿½Has ganado!";
         }
         else
         {
-            WinOrLoseText.GetComponent<Text>().text = "¡Has perdido!";
+            WinOrLoseText.GetComponent<Text>().text = "ï¿½Has perdido!";
         }
         WinOrLoseMenu.SetActive(true);
     }
